@@ -1,0 +1,31 @@
+
+// Defina os breakpoints como variáveis
+$small-max: 359px;
+$medium-min: 360px;
+$medium-max: 959px;
+$large-min: 960px;
+$large-max: 1279px;
+$xlarge-min: 1280px;
+
+// Crie o mixin respond-to
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == small {
+    @media (max-width: $small-max) {
+      @content;
+    }
+  } @else if $breakpoint == medium {
+    @media (min-width: $medium-min) and (max-width: $medium-max) {
+      @content;
+    }
+  } @else if $breakpoint == large {
+    @media (min-width: $large-min) and (max-width: $large-max) {
+      @content;
+    }
+  } @else if $breakpoint == xlarge {
+    @media (min-width: $xlarge-min) {
+      @content;
+    }
+  } @else {
+    @error "Invalid breakpoint: #{$breakpoint}";
+  }
+}

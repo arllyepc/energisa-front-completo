@@ -1,0 +1,90 @@
+.btn {
+  display: flex;
+  padding: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 0.75rem;
+  max-width: 16.375rem;
+  width: 100%;
+  text-align: center;
+
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+
+  &.primary {
+    background: var(--cores-principal-300, #c3cd3c);
+    color: var(--neutras-neutra-0, #000);
+  }
+
+  &.outlined {
+    border: 1px solid var(--neutras-neutra-200, #fff);
+    color: var(--neutras-neutra-200, #fff);
+
+    &.dark {
+      border: 1px solid var(--cores-principal-0, #003756);
+      color: var(--cores-principal-0, #003756);
+    }
+  }
+}
+
+.title-h2 {
+  color: var(--neutras-neutra-0, #000);
+  font-size: 3.1875rem;
+  font-weight: 700;
+  line-height: normal;
+  @include respond-to(small) {
+    font-size: 2.375rem;
+    text-align: center;
+  }
+
+  @include respond-to(medium) {
+    font-size: 2.375rem;
+    text-align: center;
+  }
+}
+
+.title-h3 {
+  color: var(--neutras-neutra-0, #000);
+  text-align: center;
+
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: normal;
+
+  /*  @include respond-to(small) {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  @include respond-to(medium) {
+    font-size: 1.5rem;
+    text-align: center;
+  } */
+}
+
+.corpo-p {
+  color: var(--neutras-neutra-400, rgba(0, 0, 0, 0.8));
+
+  font-size: 1.3125rem;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.subtitle {
+  color: var(--neutras-neutra-0, #000);
+
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: normal;
+
+  @include respond-to(small) {
+    font-size: 1.3125rem;
+    text-align: center;
+  }
+
+  @include respond-to(medium) {
+    font-size: 1.3125rem;
+    text-align: center;
+  }
+}
