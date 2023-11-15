@@ -37,25 +37,11 @@
           <ul>
             <li class="main-nav__item"><a href="#">Início</a></li>
             <li class="main-nav__item">
-              <a href="#"
-                >Energia Limpa
-                <iconify-icon
-                  icon="mingcute:down-line"
-                  class="main-nav__item__icon"
-                ></iconify-icon>
-              </a>
+              <a href="#">Energia Limpa </a>
             </li>
+
             <li class="main-nav__item">
-              <a href="#">Simulador </a>
-            </li>
-            <li class="main-nav__item">
-              <a href="#"
-                >A Energisa
-                <iconify-icon
-                  icon="mingcute:down-line"
-                  class="main-nav__item__icon"
-                ></iconify-icon>
-              </a>
+              <a href="#">A Energisa </a>
             </li>
           </ul>
         </nav>
@@ -213,8 +199,10 @@
               </p>
             </div>
             <nav class="s-home-or-business__nav">
-              <button type="button" class="active">Residencial</button>
-              <button type="button">Comercial</button>
+              <button type="button" id="profile-home" class="active">
+                Residencial
+              </button>
+              <button type="button" id="profile-business">Comercial</button>
             </nav>
             <div class="s-home-or-business__selected">
               <div id="selected-home">
@@ -546,6 +534,22 @@
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/all.js"></script>
+
+    <script>
+      $("#profile-home").click(function () {
+        $("#profile-home").addClass("active");
+        $("#profile-business").removeClass("active");
+        $("#selected-home").show();
+        $("#selected-business").hide();
+      });
+
+      $("#profile-business").click(function () {
+        $("#profile-business").addClass("active");
+        $("#profile-home").removeClass("active");
+        $("#selected-business").show();
+        $("#selected-home").hide();
+      });
+    </script>
 
     <script>
       const swiperFuncionalidades = new Swiper(".s-funcionalidades__swiper", {
