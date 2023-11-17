@@ -35,17 +35,31 @@
 
         <nav class="main-nav">
           <ul>
-            <li class="main-nav__item"><a href="#">Início</a></li>
+            <li class="main-nav__item"><a href="index.html">Início</a></li>
             <li class="main-nav__item">
-              <a href="#">Energia Limpa </a>
+              <a href="energia-limpa.html">Energia Limpa </a>
             </li>
 
             <li class="main-nav__item">
-              <a href="#">A Energisa </a>
+              <a href="sobre.html">A Energisa </a>
             </li>
           </ul>
         </nav>
+
+        <button class="menu-btn">
+          <div class="menu-btn__burger"></div>
+        </button>
       </div>
+      <nav class="navbar-mobile">
+        <ul>
+          <li>
+            <a class="active" href="index.html">Início</a>
+          </li>
+          <li><a href="energia-limpa.html">Energia Limpa</a></li>
+          <li><a href="sobre.html">Energisa</a></li>
+       <!--    <img src="./svg/logo-energisa-azul.svg" alt="Logo azul da Energisa" /> -->
+        </ul>
+      </nav>
     </header>
 
     <main>
@@ -229,43 +243,6 @@
     <script src="js/plugins.js"></script>
     <script src="js/all.js"></script>
 
-    <script>
-      $("#profile-home").click(function () {
-        $("#profile-home").addClass("active");
-        $("#profile-business").removeClass("active");
-        $("#selected-home").show();
-        $("#selected-business").hide();
-      });
-
-      $("#profile-business").click(function () {
-        $("#profile-business").addClass("active");
-        $("#profile-home").removeClass("active");
-        $("#selected-business").show();
-        $("#selected-home").hide();
-      });
-    </script>
-
-    <script>
-      const swiperFuncionalidades = new Swiper(".s-funcionalidades__swiper", {
-        spaceBetween: 10,
-        slidesPerView: 1,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-
-      const swiperFuncionalidadesPrices = new Swiper(
-        ".s-funcionalidades__swiper-prices",
-        {
-          spaceBetween: 10,
-          slidesPerView: 1,
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
-        }
-      );
-    </script>
+    <script></script>
   </body>
 </html>

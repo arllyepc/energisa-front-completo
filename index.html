@@ -20,7 +20,7 @@
   <body>
     <header class="main-header">
       <div class="container">
-        <a href="#"
+        <a href="index.html"
           ><img
             class="header-logo"
             src="./svg/logo-energisa-azul.svg"
@@ -35,17 +35,31 @@
 
         <nav class="main-nav">
           <ul>
-            <li class="main-nav__item"><a href="#">Início</a></li>
+            <li class="main-nav__item"><a href="index.html">Início</a></li>
             <li class="main-nav__item">
-              <a href="#">Energia Limpa </a>
+              <a href="energia-limpa.html">Energia Limpa </a>
             </li>
 
             <li class="main-nav__item">
-              <a href="#">A Energisa </a>
+              <a href="sobre.html">A Energisa </a>
             </li>
           </ul>
         </nav>
+
+        <button class="menu-btn">
+          <div class="menu-btn__burger"></div>
+        </button>
       </div>
+      <nav class="navbar-mobile">
+        <ul>
+          <li>
+            <a class="active" href="index.html">Início</a>
+          </li>
+          <li><a href="energia-limpa.html">Energia Limpa</a></li>
+          <li><a href="sobre.html">Energisa</a></li>
+          <!-- <img src="./svg/logo-energisa-azul.svg" alt="Logo azul da Energisa" /> -->
+        </ul>
+      </nav>
     </header>
 
     <main>
@@ -429,7 +443,7 @@
                   Me contate
                 </h3>
                 <form class="form-subscribe" action="">
-                  <div class="form-group radio">
+                  <div class="form-group radio required">
                     <div class="radio-group">
                       <input
                         type="radio"
@@ -452,13 +466,33 @@
                     </div>
                   </div>
 
-                  <input type="text" placeholder="Nome" id="name" />
-                  <input type="email" placeholder="E-mail" id="email" />
-                  <input type="tel" placeholder="Telefone" id="tel" />
+                  <input
+                    type="text"
+                    placeholder="Nome"
+                    id="name"
+                    class="required"
+                  />
+                  <input
+                    type="email"
+                    placeholder="E-mail"
+                    id="email"
+                    class="required"
+                  />
+                  <input
+                    type="tel"
+                    placeholder="Telefone"
+                    id="tel"
+                    class="required"
+                  />
 
                   <div class="form-group city">
-                    <input type="text" placeholder="Cidade" id="city" />
-                    <select name="uf" id="uf" title="UF">
+                    <input
+                      type="text"
+                      placeholder="Cidade"
+                      id="city"
+                      class="required"
+                    />
+                    <select name="uf" id="uf" title="UF" class="required">
                       <option value="" disabled selected>Estado</option>
                       <option value="ac">AC</option>
                       <option value="al">AL</option>
@@ -491,11 +525,23 @@
                   </div>
 
                   <div class="checkbox-group">
-                    <input type="checkbox" name="share" id="share" />
+                    <input
+                      type="checkbox"
+                      name="share"
+                      id="share"
+                      class="required"
+                    />
                     <label for="share">
                       Concordo em compartilhar minhas informações de contato com
                       a Energisa
                     </label>
+                  </div>
+
+                  <div
+                    id="error-message"
+                    style="display: none; color: red; margin-bottom: 10px"
+                  >
+                    Por favor, preencha todos os campos obrigatórios.
                   </div>
 
                   <button type="submit" class="btn outlined dark">
@@ -530,6 +576,7 @@
       </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
     <script src="js/plugins.js"></script>

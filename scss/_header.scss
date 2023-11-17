@@ -1,3 +1,11 @@
+.header-fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--neutras-neutra-200, #fff);
+}
+
 .main-header {
   background: var(--neutras-neutra-200, #fff);
   position: sticky;
@@ -22,11 +30,11 @@
     justify-content: space-between;
 
     @include respond-to(small) {
-      justify-content: center;
+      justify-content: space-between;
     }
 
     @include respond-to(medium) {
-      justify-content: center;
+      justify-content: space-between;
     }
 
     .header-logo {
@@ -105,7 +113,106 @@
     }
   }
 
-  a {
-    color: var(--neutras-neutra-200, #fff);
+  .container {
+    a {
+      color: var(--neutras-neutra-200, #fff);
+    }
+  }
+}
+
+.navbar-mobile {
+  display: none;
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    align-self: stretch;
+    background: var(--cores-secundria-200, #afe0f0);
+
+    padding: 1.6rem;
+
+    li {
+      a {
+        color: var(--cores-principal-0, #003756);
+        font-size: 1.75rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+    }
+  }
+}
+
+.menu-btn {
+  display: none;
+  @include respond-to(small) {
+    z-index: 999;
+    margin-left: 1.5rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  @include respond-to(medium) {
+    z-index: 999;
+    margin-left: 1.5rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .menu-btn__burger {
+    width: 2rem;
+    height: 4px;
+    background: #f6f6f6;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+    &::before,
+    &::after {
+      transition: all 0.3s ease-in-out;
+      position: absolute;
+      content: "";
+      width: 2rem;
+      height: 4px;
+      background: #f6f6f6;
+      border-radius: 5px;
+    }
+
+    &::before {
+      transform: translate3d(-1rem, -1rem, 0);
+    }
+
+    &::after {
+      transform: translate3d(-1rem, 1rem, 0);
+    }
+  }
+}
+
+/*Animation*/
+
+.menu-btn.open .menu-btn__burger {
+  transform: translateX(-1rem);
+  background: transparent;
+  box-shadow: none;
+
+  &::before {
+    transform: rotate(45deg) translate(0rem, 0rem);
+    background: #f6f6f6;
+  }
+
+  &::after {
+    transform: rotate(-45deg) translate(0rem, 0rem);
+    background: #f6f6f6;
   }
 }

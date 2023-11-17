@@ -36,7 +36,7 @@ function gulpJs() {
   .pipe(babel({
       presets: ['@babel/env']
   }))
-  .pipe(uglify())
+  /* .pipe(uglify()) */
   .pipe(gulp.dest('js/'))
   .pipe(browserSync.stream());
 }
